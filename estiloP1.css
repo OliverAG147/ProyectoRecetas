@@ -1,18 +1,26 @@
 *{
    font-family: 'Times New Roman', Times, serif;
+   box-sizing: border-box;
 }
 body{
    padding: 0px;
    margin: 0px;
+   flex-wrap: wrap;
 }
 h2{font-family: 'Times New Roman', serif;}
 
 h3{font-family: 'Times New Roman', cursive;}
 
+.logo{
+   width: 150px;
+   cursor: pointer;
+}
+
 ul{
-   margin: 0px;
+   margin: -174px;
    padding: 0px;
    text-align: center;
+   min-width: 300px;
 }
 
 li{
@@ -43,7 +51,7 @@ li{
 }
 
 #receta-contenido #recetas-seccion{
-   background-image: url(img/FondoP1.png);
+   background-image: url(img/60e74cfe13498comida.jpeg);
    background-size: 100%;
    height: 100vh;
    padding: 20px;
@@ -68,9 +76,9 @@ li{
 }
 
 #receta-contenido #recetas-seccion #barra ul li{
-   margin: 84px 50px;
-   height: 155px;
-   width: 240px;
+   margin: 10px 50px;
+   height: 214px;
+   width: 195px;
    overflow:hidden;
    transition:all 1s;
 }
@@ -80,14 +88,14 @@ li{
    margin-top: -10px;
 }
 #receta-contenido #recetas-seccion #barra ul li a{
-   color:#71C5BB;
+   color:#fd7e14;
    text-decoration:none;
    height: 100px;
 }
 #receta-contenido #recetas-seccion #barra ul li:hover > div a h3{
   opacity: 1;
   margin-top: -10px;
-  color: #FBCE43;
+  color: #ff3300;
 }
 
 #receta-contenido #recetas-seccion #barra ul li h2{
@@ -99,58 +107,126 @@ li{
    transition:all 1s;
    transition-delay: 0.1s;
 }
-/* Pie De Barra*/
-#footer{
-   background-color: black;
-   color:white;
-   padding:40px;
-}
-#footer ul li{
-   display: inline-block;
-   padding: 0 40px;
-   vertical-align: top;
-}
-#footer ul li a{
-   color:#aaa;
-   display: inline-block;
-   vertical-align: top;
-   transition:color 1s;
-   text-decoration: none;
-}
-#footer ul li a:hover{
-   color:white;
-   text-decoration: none;
-}
-.bad {
-	text-align: center;
-	width: 100%;
-	padding: 12px;
-	background-color: #a22;
-	color: #fff
-}
-/*footer{
-   max-height: 300px;
-   height: 150px;
-  background-color:#3b4e44;
- color:white;
+/* Pie De Paguina*/
+
+footer{
+   width:100% ;
+   background: #242527;
+   color: white;
+ 
 }
 
- footer ul li a{
-   color:aliceblue;
-   list-style: none;
-   text-decoration: none;
+.contenido-footer-all{
+  width: 100%;
+  max-width: 1200px;
+  margin: auto; /* Para Que Siempre este Centrado*/
+  padding: 40px;
 }
 
-footer ul li {
-   margin: 40px 10px 10px 10px;
+.contenido-body{
+   display: flex; /* Par Que Se Pongo Uno a lado de otro*/
+   justify-content: space-between;
 }
- .Wrap{
-    width: 1174px;
-  margin: 0px auto;
- }
- #Derechos{
-  line-height: 45px;
- }*/
+
+.colum1{
+   max-width: 400px ;
+}
+
+.colum1 h1{
+   font-size: 22px; /*Para Modificar El Tamaño De Las Letras*/
+}
+
+.colum1 p{
+   font-size: 14px;
+   color: #c7c7c7;
+   margin-top: 20px;
+}
+
+.colum2{
+   max-width: 400px ;
+}
+
+.colum2 h1{
+   font-size: 22px;
+}
+.colum2 .row{
+   margin-top: 20px;
+   display: flex;
+}
+
+.row img{
+   width: 36px; /*Ancho*/
+   height: 36px; /*Alto*/
+}
+ 
+.row label{
+   margin-top: 10px;
+   margin-left: 20px;
+   color:#c7c7c7;
+}
+
+.colum3{
+   max-width: 400px;
+}
+.colum3 h1{
+   font-size: 22px;
+}
+.row2{
+   margin-top: 20px;
+   display:flex;
+}
+.row2 img{
+   width: 36px; /*Ancho*/
+   height: 36px; /*Alto*/
+}
+ 
+.row2 label{
+   margin-top: 10px;
+   margin-left: 20px;
+  max-width: 140px;
+}
+.contenido-footer{
+   width: 100%;
+   background: #101010;
+  
+   padding: 20px;
+}
+
+.footer{
+   max-width: 1200px;
+   margin: auto;
+   display: flex;
+   justify-content: space-between;
+   padding: 30px;
+}
+
+.CopyRight{
+   color: #c7c7c7;   
+}
+.CopyRight a{
+   text-decoration: none;
+   color: #c7c7c7;
+    font-weight: bold;
+}
+
+.informacion{
+   text-decoration: none;
+   color: #c7c7c7;
+}
+
+@media screen and (max-width: 1100px){
+
+   .contenido-body{
+      flex-wrap: wrap;
+   }
+   .colum2,
+   .colum3{
+      margin-top: 40px;
+   }
+}
+
+
+
 
 
 
