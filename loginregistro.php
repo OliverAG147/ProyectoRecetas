@@ -1,26 +1,32 @@
 <?php
+    include ("bd.php");
+    $query=mysqli_query($conexion,"SELECT id_nacionalidad,name_nacionalidad FROM nacionalidad");
+?>
+<?php
 
 include "bd.php";
 error_reporting(0);
 session_start();
-
 if(isset($_SESSION["usuario"])){
     header("location: home.php");
 }
+
+
 
 if(isset($_POST["btnregistrar"])){
     $username=$_POST["username"];
     $email=$_POST["email"];
     $password=$_POST["password"];
     $cpassword=$_POST["cpassword"];
+    $nacionali=$_POST["nacionali"];
 
 
     if($password==$cpassword){
         $consul="SELECT * FROM usuario WHERE email_usuario='$email'";
         $resultado = mysqli_query($conexion, $consul);
         if(!$resultado->num_rows > 0){
-            $consul="INSERT INTO usuario (name_usuario,email_usuario,password_usuario) 
-            VALUE ('$username', '$email', '$password')";
+            $consul="INSERT INTO usuario (name_usuario,email_usuario,password_usuario,nacionalidad) 
+            VALUE ('$username', '$email', '$password','$nacionali')";
             $resultado=mysqli_query($conexion,$consul);
 
             if($resultado){
@@ -72,6 +78,16 @@ if(isset($_POST["btnregistrar"])){
         <input class="controls" type="email" name="email" id="email" value="<?php echo $email; ?>" required placeholder="Ingrese su Correo">
         <input class="controls" type="password" name="password" id="password" value="<?php echo $_POST['password']; ?>" required placeholder="Contraseña">
         <input class="controls" type="password" name="cpassword" id="cpassword" value="<?php echo $_POST['cpassword']; ?>" required placeholder="Confirmar contraseña">
+        <select class="controls" name="nacionali">
+            <?php 
+               while($datos = mysqli_fetch_array($query))
+               {
+            ?>
+                <option value="<?php echo $datos['id_nacionalidad'] ?>"> <?php echo $datos['name_nacionalidad'] ?> </option>
+            <?php 
+               }
+            ?>
+        </select>
         <input class="check-box" type="checkbox" class="deacuerdo" p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
         <input class="botons" type="submit" name="btnregistrar" value="Registrarme">
         <p><a class="cuenta-ya" href="index.php">¿Ya Tengo Cuenta?</a></p>
