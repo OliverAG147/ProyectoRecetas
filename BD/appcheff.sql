@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-11-2021 a las 16:36:31
+-- Tiempo de generación: 25-11-2021 a las 02:49:06
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.12
 
@@ -52,6 +52,15 @@ CREATE TABLE `nacionalidad` (
   `name_nacionalidad` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `nacionalidad`
+--
+
+INSERT INTO `nacionalidad` (`id_nacionalidad`, `name_nacionalidad`) VALUES
+(1, 'mexicano'),
+(2, 'japones'),
+(3, 'estadounidense');
+
 -- --------------------------------------------------------
 
 --
@@ -62,6 +71,15 @@ CREATE TABLE `pais` (
   `id_pais` int(4) NOT NULL,
   `name_pais` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `pais`
+--
+
+INSERT INTO `pais` (`id_pais`, `name_pais`) VALUES
+(1, 'mexico'),
+(2, 'japon'),
+(3, 'estados unidos');
 
 -- --------------------------------------------------------
 
@@ -90,6 +108,18 @@ CREATE TABLE `tipo` (
   `id_tipo` int(4) NOT NULL,
   `name_tipo` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tipo`
+--
+
+INSERT INTO `tipo` (`id_tipo`, `name_tipo`) VALUES
+(1, 'pozole'),
+(2, 'enchiladas'),
+(3, 'sushi'),
+(4, 'ramen'),
+(5, 'hamburguesa'),
+(6, 'pay');
 
 -- --------------------------------------------------------
 
@@ -173,13 +203,13 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `nacionalidad`
 --
 ALTER TABLE `nacionalidad`
-  MODIFY `id_nacionalidad` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_nacionalidad` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `pais`
 --
 ALTER TABLE `pais`
-  MODIFY `id_pais` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pais` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `receta`
@@ -191,7 +221,7 @@ ALTER TABLE `receta`
 -- AUTO_INCREMENT de la tabla `tipo`
 --
 ALTER TABLE `tipo`
-  MODIFY `id_tipo` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_tipo` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
