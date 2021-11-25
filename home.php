@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="estiloP1.css">
     </head>
 <body> <!-- Cuerpo -->
+<a href="logout.php">Desconectar</a>
     <div id="receta-contenido">
     <div id="recetas-seccion">
         <img src="img/icochef.png" class="logo">
