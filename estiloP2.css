@@ -31,12 +31,32 @@
 }
 nav{
    flex: 1;
-   text-align: right;   
+   text-align: right; 
 }
+
  nav ul li{
     list-style: none;
      display: inline-block;
      margin-right: 60px;
+    }
+
+    .navbar li ::after{
+       content:'';
+       width: 100%;
+       height: 1px;
+       background: #c7c7c7;
+       margin: 20px 0;
+    }
+
+    .navbar .category_item{
+       display: block;
+       width: 90%;
+       padding:  25px 0;
+       margin-bottom: 60px;
+       background: #E84C3D;
+       text-align: center;
+       text-decoration: none;
+       color: aliceblue;
     }
 
  nav ul li a{
@@ -92,31 +112,19 @@ nav{
     transition: transform 0.5s;
  }
 
- .card1{
-   background-image: url(img/Sinaloa\ AguaChile.jpg);
- }
- .card2{
-   background-image: url(img/Baja\ California\ Sur–\ Ceviche.png);
- }
- .card3{
-   background-image: url(img/Aguascalientes–\ Pollo\ de\ San\ Marcos.jpg);
- }
- .card4{
-   background-image: url(img/Gastronomia-sinaloa.jpg);
+ .card img{
+    width: 40px;
+    height: 40px;
  }
 
  .card :hover{
     transform: translateY(-10px);
  }
-h5{
-   color: #fff;
-   text-shadow: 0 0 5px #999;
-}
-.card p{
-   text-shadow: 0 0 15px #000;
-   font-size: 8px;
-
-}
+  .card a{
+   text-decoration: none;
+   margin-top: 20px;
+   display:flex;
+  }
 
 /* Pie De Paguina*/
 
