@@ -7,20 +7,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/all.min.css">
         <link rel="stylesheet" href="estiloP2.css">
+        <link rel="stylesheet" href="estiloP1.css">
     </head>
         <body>
                   <div class="Contenedor">
-                    <div class="navbar">
-                        <img src="img/icochef.png" class="logo">
-                        <nav>
-                             <ul>
-                                 <li><a href="#" class="category_item" Category="comida">Comida</a></li>
-                                 <li><a href="#" class="category_item" Category="postre">Postre</a></li>
-                                 <li><a href="#" class="category_item" Category="estado">Estado</a></li>
-                                 <li><a href="#" class="category_item" Category="bebidas">Bebidas</a></li>
-                             </ul>
-                        </nav>
-                        <img src="img/ico menu.png" class="menu-icon">
+                    <div id="platillo">
+                        <img src="img/icochef.png" alt=""> 
+                               <ul>
+                                   <li><a href="home.php">Regresar</a></li>
+                                   <li><a href="crear_receta.php">Crear receta</a></li>
+                                   <li><a href="logout.php">Cerrar Sesion</a></li>
+                               </ul>
+                        
+    
                     </div>
 
                     <div class="res">

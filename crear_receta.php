@@ -16,24 +16,14 @@
                 <div id="platillo">
                     <img src="img/icochef.png" alt=""> 
                            <ul>
-                               <li><a href="P2.php">Platillos</a></li>
+                               <li><a href="#">Platillos</a></li>
                                <li><a href="logout.php">Cerrar Sesion</a></li>
                            </ul>
                     
 
                 </div>
 
-           <div id="carrucel">
-
-                <ul>
-                    <li><img src="img/plato 1.jpeg" alt=""></li>
-                    <li><img src="img/plato 2.jpg" alt=""></li>
-                    <li><img src="img/plato 3.jpg" alt=""></li>
-                    <li><img src="img/plato 4.jpg" alt=""></li>
-
-
-                </ul>
-            </div> 
+ 
 
             <footer> <!-- Pie De Paguina Se Utiliza el Footer -->
 
