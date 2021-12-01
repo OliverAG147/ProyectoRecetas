@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-11-2021 a las 02:49:06
+-- Tiempo de generación: 01-12-2021 a las 22:02:44
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `appcheff`
+-- Base de datos: `apprecetas`
 --
 
 -- --------------------------------------------------------
@@ -37,9 +37,9 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`id_categoria`, `name_categoria`) VALUES
-(1, 'bebida'),
-(2, 'postre'),
-(3, 'comida');
+(1, 'comida'),
+(2, 'bebida'),
+(3, 'postre');
 
 -- --------------------------------------------------------
 
@@ -59,7 +59,8 @@ CREATE TABLE `nacionalidad` (
 INSERT INTO `nacionalidad` (`id_nacionalidad`, `name_nacionalidad`) VALUES
 (1, 'mexicano'),
 (2, 'japones'),
-(3, 'estadounidense');
+(3, 'estadounidense'),
+(4, 'ruso');
 
 -- --------------------------------------------------------
 
@@ -88,38 +89,15 @@ INSERT INTO `pais` (`id_pais`, `name_pais`) VALUES
 --
 
 CREATE TABLE `receta` (
-  `id_receta` int(4) NOT NULL,
+  `id_receta` int(11) NOT NULL,
+  `name_receta` varchar(30) NOT NULL,
   `ingrediente_receta` text NOT NULL,
   `procedimiento_receta` text NOT NULL,
-  `img_receta` int(11) NOT NULL,
+  `img_receta` longblob NOT NULL,
   `categoria` int(4) NOT NULL,
   `pais` int(4) NOT NULL,
-  `usuario` int(4) NOT NULL,
-  `tipo` int(4) NOT NULL
+  `usuario` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tipo`
---
-
-CREATE TABLE `tipo` (
-  `id_tipo` int(4) NOT NULL,
-  `name_tipo` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `tipo`
---
-
-INSERT INTO `tipo` (`id_tipo`, `name_tipo`) VALUES
-(1, 'pozole'),
-(2, 'enchiladas'),
-(3, 'sushi'),
-(4, 'ramen'),
-(5, 'hamburguesa'),
-(6, 'pay');
 
 -- --------------------------------------------------------
 
@@ -140,9 +118,10 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `name_usuario`, `email_usuario`, `password_usuario`, `nacionalidad`) VALUES
-(1, 'androx', 'nay_akyme@hotmail.com', 'pake', 0),
-(2, 'ian', 'papon_ian@hotmail.com', 'pimpompapas', 0),
-(3, 'lenin', 'sheldon@hotmail.com', 'esosh', 0);
+(1, 'oliver', 'oliver_aguiar@hotmail.com', 'oli123', 1),
+(2, 'rafael', 'ramael_mendoza@hotmail.com', '1234', 4),
+(3, 'efren', 'efren_jim@hotmail.com', '1234', 2),
+(4, 'peke', 'peke_trespelos@hotmail.com', '1234', 3);
 
 --
 -- Índices para tablas volcadas
@@ -173,14 +152,7 @@ ALTER TABLE `receta`
   ADD PRIMARY KEY (`id_receta`),
   ADD KEY `receta-categoria` (`categoria`),
   ADD KEY `receta-pais` (`pais`),
-  ADD KEY `receta-tipo` (`tipo`),
   ADD KEY `receta-usuario` (`usuario`);
-
---
--- Indices de la tabla `tipo`
---
-ALTER TABLE `tipo`
-  ADD PRIMARY KEY (`id_tipo`);
 
 --
 -- Indices de la tabla `usuario`
@@ -203,31 +175,19 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `nacionalidad`
 --
 ALTER TABLE `nacionalidad`
-  MODIFY `id_nacionalidad` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de la tabla `pais`
---
-ALTER TABLE `pais`
-  MODIFY `id_pais` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_nacionalidad` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `receta`
 --
 ALTER TABLE `receta`
-  MODIFY `id_receta` int(4) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `tipo`
---
-ALTER TABLE `tipo`
-  MODIFY `id_tipo` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_receta` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_usuario` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
@@ -238,9 +198,8 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `receta`
   ADD CONSTRAINT `receta-categoria` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`id_categoria`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `receta-pais` FOREIGN KEY (`pais`) REFERENCES `pais` (`id_pais`),
-  ADD CONSTRAINT `receta-tipo` FOREIGN KEY (`tipo`) REFERENCES `tipo` (`id_tipo`),
-  ADD CONSTRAINT `receta-usuario` FOREIGN KEY (`usuario`) REFERENCES `usuario` (`id_usuario`);
+  ADD CONSTRAINT `receta-pais` FOREIGN KEY (`pais`) REFERENCES `pais` (`id_pais`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `receta-usuario` FOREIGN KEY (`usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `usuario`
