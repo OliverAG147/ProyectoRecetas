@@ -14,7 +14,7 @@
                     <div id="platillo">
                         <img src="img/icochef.png" alt=""> 
                                <ul>
-                                   <li><a href="home.php">Regresar</a></li>
+                                   <li><a href="home.php">Home</a></li>
                                    <li><a href="crear_receta.php">Crear receta</a></li>
                                    <li><a href="logout.php">Cerrar Sesion</a></li>
                                </ul>

@@ -24,7 +24,7 @@
 
         if($resultado){
 
-            echo "<script>alert(La receta se ha creado con éxito)</script>";
+            echo "<script language='JavaScript'>alert('La receta se ha creado con éxito')</script>";
             $img_receta="";
             $categoria="";
             $pais="";
@@ -35,6 +35,7 @@
         }else{
             echo "<script>alert('Hay un error')</script>";
         }
+        mysqli_close($conexion);
     }
     
 ?>
