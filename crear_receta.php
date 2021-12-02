@@ -33,7 +33,7 @@
             $procedimiento_receta="";
             
         }else{
-            echo "<script>alert('Hay un error')</script>";
+            echo "<script language='JavaScript'>alert('Hay un error')</script>";
         }
         mysqli_close($conexion);
     }
@@ -72,6 +72,7 @@
                 <div id="platillo">
                     <img src="img/icochef.png" alt=""> 
                            <ul>
+                               <li><a href="home.php">Home</a></li>
                                <li><a href="P2.php">Platillos</a></li>
                                <li><a href="logout.php">Cerrar Sesion</a></li>
                            </ul>
