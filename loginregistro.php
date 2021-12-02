@@ -74,7 +74,7 @@ if(isset($_POST["btnregistrar"])){
        </div> ----->
         <hr/>
          <!----<p class="parrafo">o Ingresa tus datos:</p>----->
-        <input class="controls" type="text" name="username" id="uusername" value="<?php echo $username; ?>" required placeholder="Ingrese su nombre de usuario">
+        <input class="controls" type="text" name="username" id="username" value="<?php echo $username; ?>" required placeholder="Ingrese su nombre de usuario">
         <input class="controls" type="email" name="email" id="email" value="<?php echo $email; ?>" required placeholder="Ingrese su Correo">
         <input class="controls" type="password" name="password" id="password" value="<?php echo $_POST['password']; ?>" required placeholder="Contraseña">
         <input class="controls" type="password" name="cpassword" id="cpassword" value="<?php echo $_POST['cpassword']; ?>" required placeholder="Confirmar contraseña">

@@ -1,3 +1,46 @@
+<?php
+    include ("bd.php");
+    $query=mysqli_query($conexion,"SELECT id_categoria,name_categoria FROM categoria");
+    $query2=mysqli_query($conexion,"SELECT id_pais,name_pais FROM pais");
+
+?>
+<?php 
+    include "bd.php";
+    error_reporting(0);
+    session_start();
+    
+
+    if(isset($_POST['btncrear'])){
+        $img_receta=$_POST["img_receta"];
+        $categoria=$_POST["categoria"];
+        $pais=$_POST["pais"];
+        $name_receta=$_POST["name_receta"];
+        $ingrediente_receta=$_POST["ingrediente_receta"];
+        $procedimiento_receta=$_POST["procedimiento_receta"];
+
+        $consulta="INSERT INTO receta (name_receta,ingrediente_receta,procedimiento_receta,img_receta,categoria,pais) 
+        VALUE ('$name_receta', '$ingrediente_receta', '$procedimiento_receta','$img_receta', '$categoria', '$pais')";
+        $resultado=mysqli_query($conexion,$consulta);
+
+        if($resultado){
+
+            echo "<script>alert(La receta se ha creado con éxito)</script>";
+            $img_receta="";
+            $categoria="";
+            $pais="";
+            $name_receta="";
+            $ingrediente_receta="";
+            $procedimiento_receta="";
+            
+        }else{
+            echo "<script>alert('Hay un error')</script>";
+        }
+    }
+    
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -7,23 +50,115 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/all.min.css">
         <link rel="stylesheet" href="estiloP1.css">
+        <link href="img/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
+	<link href="img/favicon.114x114.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
+	<link href="img/favicon.72x72.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
+	<link href="img/favicon.57x57.png" rel="apple-touch-icon" type="image/png">
+	<link href="img/favicon.png" rel="icon" type="image/png">
+	<link href="img/favicon.ico" rel="shortcut icon">
+
+    <link rel="stylesheet" href="public/css/lib/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="public/css/lib/bootstrap/bootstrap.min.css">
+
+    <link rel="stylesheet" href="public/css/lib/bootstrap-sweetalert/sweetalert.css">
+	<link rel="stylesheet" href="public/css/separate/vendor/sweet-alert-animations.min.css">
+
+    <link rel="stylesheet" href="public/css/main.css">
     </head>
-
-
      <body> <!-- Cuerpo -->
           <!--<a href="logout.php">Desconectar</a>-->
 
                 <div id="platillo">
                     <img src="img/icochef.png" alt=""> 
                            <ul>
-                               <li><a href="#">Platillos</a></li>
+                               <li><a href="P2.php">Platillos</a></li>
                                <li><a href="logout.php">Cerrar Sesion</a></li>
                            </ul>
-                    
-
                 </div>
 
- 
+                                 <!-- Contenido -->
+                                 <div class="page-content">
+                
+                <div class="container-fluid">
+        
+        
+                 <div class="box-typical box-typical-padding">
+                                  <p>
+                             Desde esta ventana podrás generar nuevas recetas:
+                                  </p>
+                     
+                     
+                           <h5 class="m-t-lg with-border">Ingresar Información</h5>
+        
+                            
+                     <form method="POST" action="">
+
+                            <div class="row">                                       
+                                   <div class="col-lg-2">
+                                     <fieldset class="form-group">
+                                       <label class="form-label semibold" for="cetegoria">Categoria</label>
+                                               <select id="categoria" name="categoria" class="form-control">
+                                               <?php 
+                                                    while($datos = mysqli_fetch_array($query))
+                                                    {
+                                                 ?>
+                                                     <option value="<?php echo $datos['id_categoria'] ?>"> <?php echo $datos['name_categoria'] ?> </option>
+                                                 <?php 
+                                                    }
+                                                 ?>
+                                               </select>
+                                     </fieldset>
+                                   </div>
+                                   <div class="col-lg-2">
+                                     <fieldset class="form-group">
+                                       <label class="form-label semibold" for="pais">País de origen</label>
+                                               <select id="pais" name="pais" class="form-control">
+                                               <?php 
+                                                      while($datos = mysqli_fetch_array($query2))
+                                                      {
+                                                   ?>
+                                                       <option value="<?php echo $datos['id_pais'] ?>"> <?php echo $datos['name_pais'] ?> </option>
+                                                   <?php 
+                                                      }
+                                                   ?>
+                                               </select>
+                                     </fieldset>
+                                   </div>
+                                   <div class="col-lg-3">
+                                     <fieldset class="form-group">
+                                       <label class="form-label semibold" for="name_receta">Nombre de la receta</label>
+                                       <input type="text" class="form-control" id="name_receta" name="name_receta"  placeholder="Ingrese Nombre">
+                                     </fieldset>
+                                   </div>
+                                   <div class="col-lg-4">
+                                   <label class="form-label semibold">Elije una imagen</label>
+                                       <input type="file" name="img_receta" id="img_receta">
+                                   </div>
+
+                                   <div class="col-lg-4">
+                                     <label  class="form-label semibold">Ingredientes</label>
+                                        <textarea class="form-control" name="ingrediente_receta" id="ingrediente_receta"  rows="10"></textarea>
+                                    </div>
+                                    <div class="col-lg-6">
+                                     <label  class="form-label semibold">Procedimiento</label>
+                                        <textarea class="form-control" id="procedimiento_receta" name="procedimiento_receta"  rows="10"></textarea>
+                                    </div>
+                                    <br>
+                                   <div class="col-lg-12">
+                                       <br>
+                                          <button type="submit" name="btncrear" value="crear" class="btn btn-rounded btn-inline btn-primary">Crear</button>
+                                   </div>
+
+                            </div>   
+
+                      </form>                                      
+        
+                 </div>
+             
+           </div>
+     
+     </div>
+      <!-- Contenido -->
 
             <footer> <!-- Pie De Paguina Se Utiliza el Footer -->
 
@@ -94,6 +229,7 @@
                     </div>
                   </div>
                 </div>
-                       </footer>
+            </footer>
     </body>
 </html>
+

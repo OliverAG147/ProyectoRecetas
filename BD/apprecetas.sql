@@ -95,8 +95,7 @@ CREATE TABLE `receta` (
   `procedimiento_receta` text NOT NULL,
   `img_receta` longblob NOT NULL,
   `categoria` int(4) NOT NULL,
-  `pais` int(4) NOT NULL,
-  `usuario` int(4) NOT NULL
+  `pais` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -151,8 +150,7 @@ ALTER TABLE `pais`
 ALTER TABLE `receta`
   ADD PRIMARY KEY (`id_receta`),
   ADD KEY `receta-categoria` (`categoria`),
-  ADD KEY `receta-pais` (`pais`),
-  ADD KEY `receta-usuario` (`usuario`);
+  ADD KEY `receta-pais` (`pais`);
 
 --
 -- Indices de la tabla `usuario`
@@ -198,8 +196,7 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `receta`
   ADD CONSTRAINT `receta-categoria` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`id_categoria`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `receta-pais` FOREIGN KEY (`pais`) REFERENCES `pais` (`id_pais`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `receta-usuario` FOREIGN KEY (`usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `receta-pais` FOREIGN KEY (`pais`) REFERENCES `pais` (`id_pais`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `usuario`
