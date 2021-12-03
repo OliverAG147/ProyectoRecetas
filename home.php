@@ -33,7 +33,9 @@
                      <!--Fin del margen de la barra de navegación-->
                     </header>
 
-           <div id="carrucel">
+                    <br>
+                    <br>
+           <div id="carrucel" align="center">
 
                 <ul>
                     <li><img src="img/plato 1.jpeg" alt=""></li>
