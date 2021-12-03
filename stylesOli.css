@@ -1,0 +1,38 @@
+#sectionOli1{
+    float: right;
+    width: 70%;   
+    height: 93%;
+    margin-top: 30px;
+    margin-right: 30px;
+}
+
+.divOli1{
+    font: 25px sans-serif;
+    width: 270px;
+    height: 280px;
+    background:teal;
+    display: inline-block;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    text-align:center;
+    border-radius: 10%;
+    
+}
+
+#divOli2{
+    background: rgb(44, 224, 215);
+    border-radius: 10%;
+}
+
+#divOli3{
+    width: 270px;
+    height: 200px;
+}
+
+.btnOli1{
+    height: 51px;
+    width: 270px;
+    background: rgb(22, 156, 156);
+    font: 1em sans-serif;
+    border-radius: 10%;
+}

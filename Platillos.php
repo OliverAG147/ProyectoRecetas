@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/all.min.css">
         <link rel="stylesheet" href="mainstyle.css"/>
-        
+        <link rel="stylesheet" href="stylesOli.css"/>
     </head>
     <body>
         <div class="Contenedor">
@@ -49,9 +49,22 @@
                         <option class="select" selected disabled>Tipo</option>
                     </select>
                 </form>
-                <section id = "sectionStyleOli",>
-                    <div class = "row">
+                <section id = "sectionOli1">
+                    <div>
+                        <?php
+                            $resultado = mysqli_query($conexion, $queryRecetas);
+                            while($row = mysqli_fetch_assoc($resultado)){?>
+                                <div class = "divOli1">
+                                    <div id = "divOli2">
+                                      <?php echo $row["name_receta"]; ?>
+                                    </div>    
+                                    <div id = "divOli3">
+                                    <?php  echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['img_receta'] ).'"/>';?>
+                                    </div>
+                                    <input class = "btnOli1" type="button" value = "ver receta">
+                                </div>
                                 
+                            <?php } ?>
                     </div>
                  </section>
             </aside>
