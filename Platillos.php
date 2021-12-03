@@ -21,7 +21,7 @@
                             <nav id="navbar">
                              <!--Elementos de la barra de navegación-->
                                 <ul>
-                                <li><a href="home.php">Home</a></li>
+                                 <li><a href="home.php">Home</a></li>
                                  <li><a href="crear_receta.php">Crear Receta</a></li>
                                  <li><a href="logout.php">Cerrar sesión</a></li>
                               </ul>
