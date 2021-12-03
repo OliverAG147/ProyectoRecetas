@@ -50,36 +50,46 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/all.min.css">
-        <link rel="stylesheet" href="estiloP1.css">
+        <link rel="stylesheet" href="mainstyle.css"/>
         <link href="img/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
-	<link href="img/favicon.114x114.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
-	<link href="img/favicon.72x72.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
-	<link href="img/favicon.57x57.png" rel="apple-touch-icon" type="image/png">
-	<link href="img/favicon.png" rel="icon" type="image/png">
-	<link href="img/favicon.ico" rel="shortcut icon">
-
-    <link rel="stylesheet" href="public/css/lib/font-awesome/font-awesome.min.css">
-    <link rel="stylesheet" href="public/css/lib/bootstrap/bootstrap.min.css">
-
-    <link rel="stylesheet" href="public/css/lib/bootstrap-sweetalert/sweetalert.css">
-	<link rel="stylesheet" href="public/css/separate/vendor/sweet-alert-animations.min.css">
-
-    <link rel="stylesheet" href="public/css/main.css">
+       	<link href="img/favicon.114x114.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
+       	<link href="img/favicon.72x72.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
+       	<link href="img/favicon.57x57.png" rel="apple-touch-icon" type="image/png">
+       	<link href="img/favicon.png" rel="icon" type="image/png">
+       	<link href="img/favicon.ico" rel="shortcut icon">
+       
+           <link rel="stylesheet" href="public/css/lib/font-awesome/font-awesome.min.css">
+           <link rel="stylesheet" href="public/css/lib/bootstrap/bootstrap.min.css">
+       
+           <link rel="stylesheet" href="public/css/lib/bootstrap-sweetalert/sweetalert.css">
+       	<link rel="stylesheet" href="public/css/separate/vendor/sweet-alert-animations.min.css">
+       
+           <link rel="stylesheet" href="public/css/main.css">
     </head>
      <body> <!-- Cuerpo -->
-          <!--<a href="logout.php">Desconectar</a>-->
+                    <header id="header">
+                        <!--Margen de la barra de navegación-->
+                        <div id="wrap">
+                            <div id="logo">
+                                <a href="home.php"></a>
+                            </div>
+                              <!--Barra de navegación-->
+                            <nav id="navbar">
+                             <!--Elementos de la barra de navegación-->
+                                <ul>
+                                 <li><a href="home.php">Home</a></li>
+                                 <li><a href="Platillos.php">Platillos</a></li>
+                                 <li><a href="logout.php">Cerrar sesión</a></li>
+                                </ul>
+                              <!--Fin de los Elementos de la barra de navegación-->
+                            </nav>
+                            <!--Fin de la Barra de navegación-->
+                        </div>
+                     <!--Fin del margen de la barra de navegación-->
+                    </header>
 
-                <div id="platillo">
-                    <img src="img/icochef.png" alt=""> 
-                           <ul>
-                               <li><a href="home.php">Home</a></li>
-                               <li><a href="P2.php">Platillos</a></li>
-                               <li><a href="logout.php">Cerrar Sesion</a></li>
-                           </ul>
-                </div>
-
-                                 <!-- Contenido -->
-                                 <div class="page-content">
+             <!-- Contenido -->
+       <div class="page-content">
                 
                 <div class="container-fluid">
         
@@ -93,7 +103,7 @@
                            <h5 class="m-t-lg with-border">Ingresar Información</h5>
         
                             
-                     <form method="POST" action="">
+                    <form method="POST" action="">
 
                             <div class="row">                                       
                                    <div class="col-lg-2">
@@ -153,13 +163,13 @@
 
                             </div>   
 
-                      </form>                                      
+                    </form>                                      
         
                  </div>
              
            </div>
      
-     </div>
+        </div>
       <!-- Contenido -->
 
             <footer> <!-- Pie De Paguina Se Utiliza el Footer -->

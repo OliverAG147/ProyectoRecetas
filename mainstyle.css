@@ -125,7 +125,7 @@ option .select{
 
 /*-------------Margenes de la Barra de navegación-------------*/
 #navbar{
-    max-height: 800px;
+    max-height: 1000px;
 }
 #navbar{
     height: 65px;
@@ -138,7 +138,7 @@ option .select{
 }
 
 #navbar ul li {
-    margin: 0px 20px 0px 410px;
+    margin: 0px 20px 0px 200px;
 }
 
 #header{
@@ -147,12 +147,12 @@ option .select{
 
 /*-------------Margenes del wrap de la Barra de navegación-------------*/
 #wrap{
-    width: 1200px;
+    width: 1500px;
     margin: 0px auto;
 }
 
 /*-------------Margenes del filtro y su botón-------------*/
-input[type="text"]{
+#text{
     width: 140px;
    height: 33px;
    border-radius: 15px;
@@ -203,7 +203,7 @@ select{
 }
 
 #btn{
- width: 55px;
+ width: 60px;
  height: 40px;
  font-size: 15px;
  border-radius: 10px;
@@ -242,16 +242,112 @@ select{
     box-shadow: 1px 1px 1px 1px black;
 }
 
-footer{
-    max-height: 1400px;
-    max-width: 1500px;
+/* Pie De Paguina*/
 
-    height: 250px;
-    width: 100%;
-    
+footer{
+    width:100% ;
+    background: #242527;
     color: white;
-    background: black;
-}
+  
+ }
+ 
+ .contenido-footer-all{
+   width: 100%;
+   max-width: 1200px;
+   margin: auto; /* Para Que Siempre este Centrado*/
+   padding: 40px;
+ }
+ 
+ .contenido-body{
+    display: flex; /* Par Que Se Pongo Uno a lado de otro*/
+    justify-content: space-between;
+ }
+ 
+ .colum1{
+    max-width: 400px ;
+ }
+ 
+ .colum1 h1{
+    font-size: 22px; /*Para Modificar El Tamaño De Las Letras*/
+ }
+ 
+ .colum1 p{
+    font-size: 14px;
+    color: #c7c7c7;
+    margin-top: 20px;
+ }
+ 
+ .colum2{
+    max-width: 400px ;
+ }
+ 
+ .colum2 h1{
+    font-size: 22px;
+ }
+ .colum2 .row{
+    margin-top: 20px;
+    display: flex;
+ }
+ 
+ .row img{
+    width: 36px; /*Ancho*/
+    height: 36px; /*Alto*/
+ }
+  
+ .row label{
+    margin-top: 10px;
+    margin-left: 20px;
+    color:#c7c7c7;
+ }
+ 
+ .colum3{
+    max-width: 400px;
+ }
+ .colum3 h1{
+    font-size: 22px;
+ }
+ .row2{
+    margin-top: 20px;
+    display:flex;
+ }
+ .row2 img{
+    width: 36px; /*Ancho*/
+    height: 36px; /*Alto*/
+ }
+  
+ .row2 label{
+    margin-top: 10px;
+    margin-left: 20px;
+   max-width: 140px;
+ }
+ .contenido-footer{
+    width: 100%;
+    background: #101010;
+   
+    padding: 20px;
+ }
+ 
+ .footer{
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+ }
+ 
+ .CopyRight{
+    color: #c7c7c7;   
+ }
+ .CopyRight a{
+    text-decoration: none;
+    color: #c7c7c7;
+     font-weight: bold;
+ }
+ 
+ .informacion{
+    text-decoration: none;
+    color: #c7c7c7;
+ }
 
 select{
     margin: 15px auto;

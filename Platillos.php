@@ -6,61 +6,56 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/all.min.css">
-        <link rel="stylesheet" href="estiloP2.css">
-        <link rel="stylesheet" href="estiloP1.css">
+        <link rel="stylesheet" href="mainstyle.css"/>
+        
     </head>
-        <body>
-                  <div class="Contenedor">
-                    <div id="platillo">
-                        <img src="img/icochef.png" alt=""> 
-                               <ul>
-                                   <li><a href="home.php">Home</a></li>
-                                   <li><a href="crear_receta.php">Crear receta</a></li>
-                                   <li><a href="logout.php">Cerrar Sesion</a></li>
-                               </ul>
-                        
-    
-                    </div>
-
-                    <div class="res">
-                        
-                        <div class="col">
-                         <h1>Super Recetas</h1>
-                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                             Assumenda, placeat. Delectus, reiciendis exercitationem. 
-                             Consectetur quod exercitationem debitis consequuntur, 
-                             dicta doloremque voluptates, dolor perspiciatis eum 
-                             quaerat illum odit assumenda, maiores amet.</p>
-                             <button type="button">Saber Más</button>
+    <body>
+                <div class="Contenedor">
+                    <header id="header">
+                        <!--Margen de la barra de navegación-->
+                        <div id="wrap">
+                            <div id="logo">
+                                <a href="home.php"></a>
+                            </div>
+                              <!--Barra de navegación-->
+                            <nav id="navbar">
+                             <!--Elementos de la barra de navegación-->
+                                <ul>
+                                <li><a href="home.php">Home</a></li>
+                                 <li><a href="crear_receta.php">Crear Receta</a></li>
+                                 <li><a href="logout.php">Cerrar sesión</a></li>
+                              </ul>
+                              <!--Fin de los Elementos de la barra de navegación-->
+                            </nav>
+                            <!--Fin de la Barra de navegación-->
                         </div>
+                     <!--Fin del margen de la barra de navegación-->
+                    </header>
 
-
-                       <!--<div class="col">
-                            <div class="card" Category="">
-                                <img src="img/Sinaloa AguaChile.jpg" alt="comida" alt="estado">
-                                <a href="#">Sinaloa</a>
-                            </div>
-                            <div class="card" Category="">
-                                <img src="img/Sinaloa AguaChile.jpg" alt="postre">
-                                <a href="#">Jalisco</a>
-                            </div>
-                            <div class="card" Category="">
-                                <img src="img/Sinaloa AguaChile.jpg" alt="estado">
-                                <a href="#">Monterrey</a>
-                            </div>
-                            <div class="card" Category="">
-                                <img src="img/Sinaloa AguaChile.jpg" alt="bebidas">
-                                <a href="#">Guerrero</a>
-                            </div>
+                    <aside id="sidebar">
+                        <form id="form">
+                             <div id="cont">
+                                 <input id="text" type="text" id="filtro"> <button id="btn">Buscar</button>
+                             </div>
+                             <button id="mts">Mostrar Todos</button>
+     
+                             <select name=""> 
+                                 <option class="select" selected disabled>País</option>
+                             </select>
+     
+                             <select name="">
+                                 <option class="select" selected disabled>Tipo</option>
+                             </select>
+     
+                             <hr/>
                            
-                        </div>--> 
-                        
-                    </div>
+                        </form>
+                   </aside>
 
-                  </div>
+                </div>
 
 
-                  <footer> <!-- Pie De Paguina Se Utiliza el Footer -->
+                <footer> <!-- Pie De Paguina Se Utiliza el Footer -->
 
                     <div class="contenido-footer-all">
                 
@@ -129,8 +124,8 @@
                         </div>
                       </div>
                     </div>
-                           </footer>
+                </footer>
             
     
-      </body>
+    </body>
 </html>

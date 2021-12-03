@@ -7,21 +7,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/all.min.css">
         <link rel="stylesheet" href="estiloP1.css">
+        <link rel="stylesheet" href="mainstyle.css"/>
     </head>
 
 
      <body> <!-- Cuerpo -->
-          <!--<a href="logout.php">Desconectar</a>-->
-
-                <div id="platillo">
-                    <img src="img/icochef.png" alt=""> 
-                           <ul>
-                               <li><a href="P2.php">Platillos</a></li>
-                               <li><a href="logout.php">Cerrar Sesion</a></li>
-                           </ul>
-                    
-
-                </div>
+                    <header id="header">
+                        <!--Margen de la barra de navegación-->
+                        <div id="wrap">
+                            <div id="logo">
+                                <a href="home.php"></a>
+                            </div>
+                              <!--Barra de navegación-->
+                            <nav id="navbar">
+                             <!--Elementos de la barra de navegación-->
+                                <ul>
+                                <li><a href="home.php">Home</a></li>
+                                 <li><a href="Platillos.php">Platillos</a></li>
+                                 <li><a href="logout.php">Cerrar sesión</a></li>
+                              </ul>
+                              <!--Fin de los Elementos de la barra de navegación-->
+                            </nav>
+                            <!--Fin de la Barra de navegación-->
+                        </div>
+                     <!--Fin del margen de la barra de navegación-->
+                    </header>
 
            <div id="carrucel">
 
@@ -30,8 +40,6 @@
                     <li><img src="img/plato 2.jpg" alt=""></li>
                     <li><img src="img/plato 3.jpg" alt=""></li>
                     <li><img src="img/plato 4.jpg" alt=""></li>
-
-
                 </ul>
             </div> 
 

@@ -1,223 +1,48 @@
-body{
-   background:url(img/mantel.jpg);
-   font-family: Arial, Helvetica, sans-serif;
 
+
+/*-----------------Carrusel----------------*/
+
+
+#carrucel{
+   width: 80%;
+   margin: auto;
+   overflow: hidden;
 }
-#platillo {
-   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f85032+0,f16f5c+50,f6290c+51,f02f17+71,e73827+100;Red+Gloss+%231 */
-background: #f85032; /* Old browsers */
-background: -moz-linear-gradient(top,  #f85032 0%, #f16f5c 50%, #f6290c 51%, #f02f17 71%, #e73827 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  #f85032 0%,#f16f5c 50%,#f6290c 51%,#f02f17 71%,#e73827 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  #f85032 0%,#f16f5c 50%,#f6290c 51%,#f02f17 71%,#e73827 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#e73827',GradientType=0 ); /* IE6-9 */
-   width: 100%;
-   height: 100px;
-   text-align: center;
+
+#carrucel ul{
    display: flex;
-   padding: 0px;
+   padding: 0;
+   width: 400%;
+
+   animation: cambio 15s infinite;
+   animation-direction: alternate-reverse;
 }
 
- #platillo img{
-    width: 100px;
-    height: 100px;
+#carrucel li{
+   width: 100%;
+   list-style: none;
 }
- /* NAV BARRA */
-#platillo ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 90%;
-    max-width: 2000px;
-    margin: auto;
- }
 
- #platillo ul li{
-    display: inline-block;
-    text-align: center;
- }
-
- #platillo ul li a{
-    color:turquoise;
-    text-decoration: none;
-    display: flex;
-    padding: 10px;
-    margin: 0 50px;
-    line-height: 80px;
-    text-transform: uppercase;
-    
- }
-  #platillo a:hover{
-     color:white;
-     background: rgb(248, 154, 31);
-     animation: 1s ms 1; /* Para La Animacion */
-  }
-
-  @keyframes ms { /* @keyframes es para la animaciones*/
-     0%{
-        opacity: 0 ;
-        transform: scale(1.7);
-     }
-  }
-  
-
- /*CARRUCEL */
-
- #carrucel{
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
- }
-
- #carrucel ul{
-    display: flex;
-    padding: 0;
-    width: 400%;
-
-    animation: cambio 20s infinite;
-    animation-direction: alternate-reverse;
- }
-
- #carrucel li{
-    width: 100%;
-    list-style: none;
- }
-
- #carrucel img{
-    width: 100%;
-    height: 90%;
- }
+#carrucel img{
+   width: 100%;
+   height: 90%;
+}
 
 @keyframes cambio {
-   0% {margin-left: 0;}
-   20% {margin-left: 0;}
+  0% {margin-left: 0;}
+  20% {margin-left: 0;}
 
-   25% {margin-left: -100%;}
-   45% {margin-left: -100%;}
+  25% {margin-left: -100%;}
+  45% {margin-left: -100%;}
 
-   50% {margin-left: -200%;}
-   70% {margin-left: -200%;}
+  50% {margin-left: -200%;}
+  70% {margin-left: -200%;}
 
-   75% {margin-left: -300%;}
-   100% {margin-left: -300%;}
-}
-
-
-
-/* Pie De Paguina*/
-
-footer{
-   width:100% ;
-   background: #242527;
-   color: white;
- 
+  75% {margin-left: -300%;}
+  100% {margin-left: -300%;}
 }
 
-.contenido-footer-all{
-  width: 100%;
-  max-width: 1200px;
-  margin: auto; /* Para Que Siempre este Centrado*/
-  padding: 60px;
-}
 
-.contenido-body{
-   display: flex; /* Par Que Se Pongo Uno a lado de otro*/
-   justify-content: space-between;
-}
-
-.colum1{
-   max-width: 400px ;
-}
-
-.colum1 h1{
-   font-size: 22px; /*Para Modificar El Tamaño De Las Letras*/
-}
-
-.colum1 p{
-   font-size: 14px;
-   color: #c7c7c7;
-   margin-top: 20px;
-}
-
-.colum2{
-   max-width: 400px ;
-}
-
-.colum2 h1{
-   font-size: 22px;
-}
-.colum2 .row{
-   margin-top: 20px;
-   display: flex;
-}
-
-.row img{
-   width: 36px; /*Ancho*/
-   height: 36px; /*Alto*/
-}
- 
-.row label{
-   margin-top: 10px;
-   margin-left: 20px;
-   color:#c7c7c7;
-}
-
-.colum3{
-   max-width: 400px;
-}
-.colum3 h1{
-   font-size: 22px;
-}
-.row2{
-   margin-top: 20px;
-   display:flex;
-}
-.row2 img{
-   width: 36px; /*Ancho*/
-   height: 36px; /*Alto*/
-}
- 
-.row2 label{
-   margin-top: 10px;
-   margin-left: 20px;
-  max-width: 140px;
-}
-.contenido-footer{
-   width: 100%;
-   background: #101010;
-  
-   padding: 20px;
-}
-
-.footer{
-   max-width: 1200px;
-   margin: auto;
-   display: flex;
-   justify-content: space-between;
-   padding: 30px;
-}
-
-.CopyRight{
-   color: #c7c7c7;   
-}
-.CopyRight a{
-   text-decoration: none;
-   color: #c7c7c7;
-    font-weight: bold;
-}
-
-.informacion{
-   text-decoration: none;
-   color: #c7c7c7;
-}
-
-@media screen and (max-width: 1100px){
-
-   .contenido-body{
-      flex-wrap: wrap;
-   }
-   .colum2,
-   .colum3{
-      margin-top: 40px;
-   } 
+/*-----------------Carrusel----------------*/
 
 
