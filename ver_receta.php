@@ -78,6 +78,7 @@
         </header>
         <!-- Contenido -->
         <div class="page-content">
+    <?php print_r($_POST);?>
             <div class="container-fluid">
                 <div class="box-typical box-typical-padding">
                     <p>Desde esta ventana podrás generar nuevas recetas:</p>

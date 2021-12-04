@@ -59,16 +59,23 @@
                     <div>
                         <?php
                             $resultado = mysqli_query($conexion, $queryRecetas);
-                            while($row = mysqli_fetch_assoc($resultado)){?>
-                                <form method = "POST" action="/acciones.php" enctype="multipart/form-data" class = "divOli1">
+                            while($row = mysqli_fetch_assoc($resultado)){?> 
+                                <form method = "POST" action="acciones.php" enctype="multipart/form-data" class = "divOli1">
                                     <div id = "divOli2">
                                       <?php echo $row["name_receta"]; ?>
                                     </div>    
                                     <div id = "divOli3">
                                     <?php  echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['img_receta'] ).'"/>';?>
                                     </div>
-                                    <a href="ver_receta.php"><input class = "btnOli1" type="button" value = "ver receta"></a>
-                                    
+
+                                    <input id= "inputOli1" name = "id" type="" value ="<?php echo $row["id_receta"]; ?>">
+                                    <input id= "inputOli1" name = "nombre" type="" value ="<?php echo $row["name_receta"]; ?>">
+                                    <input id= "inputOli1" name = "ingrediente" type="" value ="<?php echo $row["ingrediente_receta"]; ?>">
+                                    <input id= "inputOli1" name = "procedimiento" type="" value ="<?php echo $row["procedimiento_receta"]; ?>">
+                                    <input id= "inputOli1" name = "categoria" type="" value ="<?php echo $row["categoria"]; ?>">
+                                    <input id= "inputOli1" name = "pais" type="" value ="<?php echo $row["pais"]; ?>">
+
+                                    <button type = "submit" class = "btnOli1"> ver receta</button>
                                 </form>
                                 
                             <?php } ?>
