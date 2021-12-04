@@ -43,10 +43,16 @@
                     </div>
                     <button id="mts">Mostrar Todos</button>
                     <select name=""> 
-                        <option class="select" selected disabled>País</option>
+                        <option class="select" value= "">País</option>
+                        <option class="select" value= "1">México</option>
+                        <option class="select" value= "2">Japon</option>
+                        <option class="select" value= "3">Estados unidos</option>
                     </select>
                     <select name="">
-                        <option class="select" selected disabled>Tipo</option>
+                        <option class="select" value="">Categoria</option>
+                        <option class="select" value="1">Comida</option>
+                        <option class="select" value="2">Bebida</option>
+                        <option class="select" value="3">Postre</option>
                     </select>
                 </form>
                 <section id = "sectionOli1">
@@ -54,15 +60,16 @@
                         <?php
                             $resultado = mysqli_query($conexion, $queryRecetas);
                             while($row = mysqli_fetch_assoc($resultado)){?>
-                                <div class = "divOli1">
+                                <form method = "POST" action="/acciones.php" enctype="multipart/form-data" class = "divOli1">
                                     <div id = "divOli2">
                                       <?php echo $row["name_receta"]; ?>
                                     </div>    
                                     <div id = "divOli3">
                                     <?php  echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['img_receta'] ).'"/>';?>
                                     </div>
-                                    <input class = "btnOli1" type="button" value = "ver receta">
-                                </div>
+                                    <a href="ver_receta.php"><input class = "btnOli1" type="button" value = "ver receta"></a>
+                                    
+                                </form>
                                 
                             <?php } ?>
                     </div>
