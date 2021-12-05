@@ -33,6 +33,32 @@
         mysqli_close($conexion);
     }
 ?>
+<?php
+    $id = $_POST["id"];
+    $nombre = $_POST["nombre"];
+    $ingredientes = $_POST["ingredientes"];
+    $procedimiento = $_POST["procedimiento"];
+    switch ($_POST["categoria"]){
+        case 1:
+            $categoria = "Comida";
+            break;
+        case 2:
+            $categoria = "Bebida";
+            break;
+        case 3:
+            $categoria = "Postre";
+    }
+    switch ($_POST["pais"]){
+        case 1:
+            $pais = "Mexico";
+            break;
+        case 2:
+            $pais = "Japon";
+            break;
+        case 3:
+            $pais = "Estados Unidos";
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -54,6 +80,7 @@
         <link rel="stylesheet" href="public/css/lib/bootstrap-sweetalert/sweetalert.css">
        	<link rel="stylesheet" href="public/css/separate/vendor/sweet-alert-animations.min.css">
         <link rel="stylesheet" href="public/css/main.css">
+        <link rel="stylesheet" href="stylesOli.css">
     </head>
     <body> <!-- Cuerpo -->
         <header id="header">
@@ -78,59 +105,45 @@
         </header>
         <!-- Contenido -->
         <div class="page-content">
-    <?php print_r($_POST);?>
             <div class="container-fluid">
                 <div class="box-typical box-typical-padding">
-                    <p>Desde esta ventana podrás generar nuevas recetas:</p>
-                    <h5 class="m-t-lg with-border">Ingresar Información</h5>
-                    <form method="POST" action="">
+                    <h5 class="m-t-lg with-border">Información de la Receta</h5>
+                    <form>
                         <div class="row">                                       
                             <div class="col-lg-2">
                                 <fieldset class="form-group">
                                     <label class="form-label semibold" for="cetegoria">Categoria</label>
-                                    <select id="categoria" name="categoria" class="form-control">
-                                        <?php 
-                                            while($datos = mysqli_fetch_array($query)){?>
-                                                <option value="<?php echo $datos['id_categoria'] ?>"> <?php echo $datos['name_categoria'] ?> </option>
-                                            <?php }
-                                        ?>
-                                    </select>
+                                    <input class="form-control" type= "text"  value="<?php echo $categoria?>" disabled>
                                 </fieldset>
                             </div>
                             <div class="col-lg-2">
                                 <fieldset class="form-group">
                                     <label class="form-label semibold" for="pais">País de origen</label>
-                                    <select id="pais" name="pais" class="form-control">
-                                        <?php 
-                                            while($datos = mysqli_fetch_array($query2)){?>
-                                                <option value="<?php echo $datos['id_pais'] ?>"> <?php echo $datos['name_pais'] ?> </option>
-                                            <?php }
-                                        ?>
-                                    </select>
+                                    <input class="form-control" type= "text"  value="<?php echo $pais?>" disabled>
                                 </fieldset>
                             </div>
                             <div class="col-lg-3">
                                 <fieldset class="form-group">
-                                    <label class="form-label semibold" for="name_receta">Nombre de la receta</label>
-                                    <input type="text" class="form-control" id="name_receta" name="name_receta"  placeholder="Ingrese Nombre">
+                                    <label class="form-label semibold" for="name_receta">Nombre de la receta</label >
+                                    <input class="form-control" type= "text"  value="<?php echo $nombre?>" disabled>
                                 </fieldset>
                             </div>
                             <div class="col-lg-4">
-                                <label class="form-label semibold">Elije una imagen</label>
-                                <input type="file" name="img_receta" id="img_receta">
+                                <label class="form-label semibold">imagen</label>
+                                <img src="" alt="">
                             </div>
                             <div class="col-lg-4">
                                 <label  class="form-label semibold">Ingredientes</label>
-                                <textarea class="form-control" name="ingrediente_receta" id="ingrediente_receta"  rows="10"></textarea>
+                                <textarea class="form-control" name="ingrediente_receta" id="ingrediente_receta"  rows="10" disabled><?php echo $ingredientes?></textarea>
                             </div>
                             <div class="col-lg-6">
                                 <label  class="form-label semibold">Procedimiento</label>
-                                <textarea class="form-control" id="procedimiento_receta" name="procedimiento_receta"  rows="10"></textarea>
+                                <textarea class="form-control" id="procedimiento_receta" name="procedimiento_receta"  rows="10" disabled><?php echo $procedimiento?></textarea>
                             </div>
                             <br>
                             <div class="col-lg-12">
                                 <br>
-                                <button type="submit" name="btncrear" value="crear" class="btn btn-rounded btn-inline btn-primary">Crear</button>
+                                <a href="Platillos.php" class="btn btn-rounded btn-inline btn-primary">regresar</a>
                             </div>
                         </div>   
                     </form>                                      

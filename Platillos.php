@@ -1,6 +1,28 @@
 <?php
     include ("bd.php");
-    $queryRecetas = "SELECT * FROM receta"                       
+    $queryRecetasPre = "SELECT * FROM receta";
+    if(isset($_POST["contPais"])){
+        $Cpais= $_POST["contPais"];
+    }else{
+        $Cpais= 0;
+    }
+    
+    switch ($Cpais){
+        case 1:
+            $queryRecetasWhere = " WHERE pais = 1";
+            break;
+        case 2:
+            $queryRecetasWhere = " WHERE pais = 2";
+            break;
+        case 3:
+            $queryRecetasWhere = " WHERE pais = 3";
+            break;
+        default:
+        $queryRecetasWhere = "";
+    }
+    $queryRecetas = $queryRecetasPre.$queryRecetasWhere
+
+
 ?>
 
 <!DOCTYPE html>
@@ -37,30 +59,33 @@
                 <!--Fin del margen de la barra de navegación-->
             </header>
             <aside id="sidebar">
-                <form id="formstyleoli">
+                <form method = "POST" action="Platillos.php" id="formstyleoli">
                      <div id="cont">
                         <input id="text" type="text" id="filtro"> <button id="btn">Buscar</button>
                     </div>
-                    <button id="mts">Mostrar Todos</button>
-                    <select name=""> 
-                        <option class="select" value= "">País</option>
-                        <option class="select" value= "1">México</option>
-                        <option class="select" value= "2">Japon</option>
-                        <option class="select" value= "3">Estados unidos</option>
-                    </select>
-                    <select name="">
-                        <option class="select" value="">Categoria</option>
-                        <option class="select" value="1">Comida</option>
-                        <option class="select" value="2">Bebida</option>
-                        <option class="select" value="3">Postre</option>
-                    </select>
+                <!--<button id="mts">Mostrar Todos</button>-->
+                    <div id="cont">
+                        <select name="contPais" placeholder="Ingrese Nombre"> 
+                            <option class="select" value= "0">--Todos los Países--</option>
+                            <option class="select" value= "1">México</option>
+                            <option class="select" value= "2">Japon</option>
+                            <option class="select" value= "3">Estados unidos</option>
+                        </select>
+                        <select name="contCategoria">
+                            <option class="select" value="0">--Todas las Categorias--</option>
+                            <option class="select" value="1">Comida</option>
+                            <option class="select" value="2">Bebida</option>
+                            <option class="select" value="3">Postre</option>
+                        </select>
+                        <button id="mts">Filtrar</button>
+                    </div>
                 </form>
                 <section id = "sectionOli1">
                     <div>
                         <?php
                             $resultado = mysqli_query($conexion, $queryRecetas);
                             while($row = mysqli_fetch_assoc($resultado)){?> 
-                                <form method = "POST" action="acciones.php" enctype="multipart/form-data" class = "divOli1">
+                                <form method = "POST" action="ver_receta.php" enctype="multipart/form-data" class = "divOli1">
                                     <div id = "divOli2">
                                       <?php echo $row["name_receta"]; ?>
                                     </div>    
@@ -70,7 +95,7 @@
 
                                     <input id= "inputOli1" name = "id" type="" value ="<?php echo $row["id_receta"]; ?>">
                                     <input id= "inputOli1" name = "nombre" type="" value ="<?php echo $row["name_receta"]; ?>">
-                                    <input id= "inputOli1" name = "ingrediente" type="" value ="<?php echo $row["ingrediente_receta"]; ?>">
+                                    <input id= "inputOli1" name = "ingredientes" type="" value ="<?php echo $row["ingrediente_receta"]; ?>">
                                     <input id= "inputOli1" name = "procedimiento" type="" value ="<?php echo $row["procedimiento_receta"]; ?>">
                                     <input id= "inputOli1" name = "categoria" type="" value ="<?php echo $row["categoria"]; ?>">
                                     <input id= "inputOli1" name = "pais" type="" value ="<?php echo $row["pais"]; ?>">
