@@ -1,30 +1,71 @@
 <?php
     include ("bd.php");
-    $queryRecetasPre = "SELECT * FROM receta";
+    /*print '<pre>';
+    print_r($_POST);*/
+
+    $queryPre = "SELECT * FROM receta WHERE";
+
+    if(isset($_POST["contBuscar"])){
+        $Cbuscar= $_POST["contBuscar"];
+        $queryLast = " name_receta LIKE '%$Cbuscar%'";
+    }else{
+        $queryLast = " name_receta LIKE '%%'";
+    }
+    $queryAND2 = "";
+
+
     if(isset($_POST["contPais"])){
         $Cpais= $_POST["contPais"];
     }else{
         $Cpais= 0;
     }
-    
     switch ($Cpais){
         case 1:
-            $queryRecetasWhere = " WHERE pais = 1";
+            $QRC1 = " pais = 1";
+            $queryAND = " AND";
+            $queryAND2 = " AND";
             break;
         case 2:
-            $queryRecetasWhere = " WHERE pais = 2";
+            $QRC1 = " pais = 2";
+            $queryAND = " AND";
+            $queryAND2 = " AND";
             break;
         case 3:
-            $queryRecetasWhere = " WHERE pais = 3";
+            $QRC1 = " pais = 3";
+            $queryAND = " AND";
+            $queryAND2 = " AND";
             break;
         default:
-        $queryRecetasWhere = "";
+            $QRC1 = "";
+            $queryAND = "";
+            
     }
-    $queryRecetas = $queryRecetasPre.$queryRecetasWhere
 
+    if(isset($_POST["contCategoria"])){
+        $Ccategoria = $_POST["contCategoria"];
+    }else{
+        $Ccategoria = 0;
+    }
+    switch ($Ccategoria){
+        case 1:
+            $QRC2 = " categoria = 1";
+            $queryAND2 = " AND";
+            break;
+        case 2:
+            $QRC2 = " categoria = 2";
+            $queryAND2 = " AND";
+            break;
+        case 3:
+            $QRC2 = " categoria = 3";
+            $queryAND2 = " AND";
+            break;
+        default:
+            $QRC2 = "";
+            $queryAND = ""; 
+    }
 
+    $queryRecetas = $queryPre.$QRC1.$queryAND.$QRC2.$queryAND2.$queryLast;
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -61,9 +102,9 @@
             <aside id="sidebar">
                 <form method = "POST" action="Platillos.php" id="formstyleoli">
                      <div id="cont">
-                        <input id="text" type="text" id="filtro"> <button id="btn">Buscar</button>
+                        <input id="text" type="text" id="filtro" name = "contBuscar"> 
+                        <button id="btn">Buscar</button>
                     </div>
-                <!--<button id="mts">Mostrar Todos</button>-->
                     <div id="cont">
                         <select name="contPais" placeholder="Ingrese Nombre"> 
                             <option class="select" value= "0">--Todos los Países--</option>
