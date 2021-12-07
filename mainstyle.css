@@ -20,6 +20,7 @@ background: transparent;
 }
 body {
 line-height: 1;
+
 }
 ol, ul {
 list-style: none;
@@ -78,7 +79,7 @@ body{
 }
 
 #header{
-    width: 100%;
+    width: auto;
     height: 65px;
     background-color: rgb(255, 255, 255);
     font-family: "BebasNeue";
@@ -140,7 +141,7 @@ option .select{
 }
 
 #navbar ul li {
-    margin: 0px 20px 0px 200px;
+    margin: 0px 215px 0px 138px;
 }
 
 #header{
@@ -250,21 +251,22 @@ select{
     box-shadow: 1px 1px 1px 1px black;
 }
 
-/* Pie De Paguina*/
-#footerOli{
-    clear: both;
-}
+/* Pie De Pagina*/
+
 footer{
-    width:100% ;
     background: #242527;
     color: white;
+    box-sizing:content-box;
+    margin:auto;
+    position: relative;
  }
  
  .contenido-footer-all{
    width: 100%;
-   max-width: 1200px;
+   max-width: 1250px;
    margin: auto; /* Para Que Siempre este Centrado*/
-   padding: 40px;
+   padding: 28px;
+   
  }
  
  .contenido-body{
@@ -332,16 +334,14 @@ footer{
  .contenido-footer{
     width: 100%;
     background: #101010;
-   
-    padding: 20px;
  }
  
- .footer{
+  .footerr{
     max-width: 1200px;
     margin: auto;
     display: flex;
     justify-content: space-between;
-    padding: 30px;
+    padding: 20px;
  }
  
  .CopyRight{
@@ -374,6 +374,6 @@ hr{
     width: 30%;
     color: #333;
 }
-#imgOli{
-    width: 100px;
-}
+
+
+
