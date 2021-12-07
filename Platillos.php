@@ -131,9 +131,8 @@
                                       <?php echo $row["name_receta"]; ?>
                                     </div>    
                                     <div id = "divOli3">
-                                    <?php  echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['img_receta'] ).'"/>';?>
+                                        <img width="200" height = "200" src="data:image/jpeg;base64, <?php echo base64_encode( $row['img_receta'])?>"/>
                                     </div>
-
                                     <input id= "inputOli1" name = "id" type="" value ="<?php echo $row["id_receta"]; ?>">
                                     <input id= "inputOli1" name = "nombre" type="" value ="<?php echo $row["name_receta"]; ?>">
                                     <input id= "inputOli1" name = "ingredientes" type="" value ="<?php echo $row["ingrediente_receta"]; ?>">
