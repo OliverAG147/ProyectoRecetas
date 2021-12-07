@@ -1,7 +1,7 @@
 <?php
     include ("bd.php");
-    print '<pre>';
-    print_r($_POST);
+    /*print '<pre>';
+    print_r($_POST);*/
 
     $queryPre = "SELECT * FROM receta WHERE";
 
@@ -76,7 +76,18 @@
 </head>
 <body>
     <H1>
-        <?php echo ($queryRecetas)?>
+        <?php 
+            $query = "SELECT * FROM receta";
+            $res = mysqli_query($conexion, $query);
+            while ($row = mysqli_fetch_assoc($res)){?>
+                <tr>
+                    <td> 
+                        <?php echo $row["img_receta"] ?>
+                        <img  src="data:image/png;base64,<?php echo base64_encode( $res['img_receta'] ); ?> " >
+                    </td>
+                </tr>
+        <?php } 
+        ?>
     </H1>
 </body>
 </html>

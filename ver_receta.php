@@ -34,8 +34,9 @@
     }
 ?>
 <?php
-    $id = $_POST["id"];
+    
     $nombre = $_POST["nombre"];
+    $imagen = $_POST["imagen"];
     $ingredientes = $_POST["ingredientes"];
     $procedimiento = $_POST["procedimiento"];
     switch ($_POST["categoria"]){

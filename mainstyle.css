@@ -251,12 +251,13 @@ select{
 }
 
 /* Pie De Paguina*/
-
+#footerOli{
+    clear: both;
+}
 footer{
     width:100% ;
     background: #242527;
     color: white;
-  
  }
  
  .contenido-footer-all{
@@ -373,4 +374,6 @@ hr{
     width: 30%;
     color: #333;
 }
-
+#imgOli{
+    width: 100px;
+}
