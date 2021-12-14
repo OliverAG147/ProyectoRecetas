@@ -7,12 +7,13 @@
 }
 
 .divOli1{
-    font: 25px sans-serif;
+    font-size: 21px;
+    color: #333;
     max-width: 300px;
     max-height: 300px;
     width: 270px;
     height: 280px;
-    background:teal;
+    background:#333;
     display: inline-block;
     margin-bottom: 30px;
     margin-right: 20px;
@@ -22,8 +23,10 @@
 }
 
 #divOli2{
-    background: rgb(44, 224, 215);
-    border-radius: 10%;
+    background: rgb(255, 255, 255);
+    border-radius: 5px 5px 0px 0px;
+    border: 2px solid #333;
+    height: 25px;
 }
 
 #divOli3{
@@ -34,12 +37,20 @@
 .btnOli1{
     height: 51px;
     width: 270px;
-    background: rgb(22, 156, 156);
-    font: 1em sans-serif;
+    background: white;
+    font-size: 17px;
+    color: #333;
     border-radius: 0px 0px 10px 10px;
-    border-color: rgb(17, 110, 110);
+    border-color: #333;
     position: relative;
+    transition: 300ms;
 }
+
+.btnOli1:hover{
+    background: #333;
+    color: white;
+}
+
 #inputOli1{
     visibility:hidden;
     height: 0px;
@@ -51,5 +62,13 @@ div > .imgOli{
     height: 150px;  
 }
 #divBtnOli1{
-    margin: 50px 0px 0px 0px;
+    margin: 55px 0px 0px 0px;
+}
+#divOli1{
+    width: 80px;
+}
+
+#divOli3{
+    float: right;
+    margin-right: 0px;
 }

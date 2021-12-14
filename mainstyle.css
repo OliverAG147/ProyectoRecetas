@@ -69,12 +69,20 @@ body{
     float: left;
     background-image: url(logo.jpeg);
     background-size: 100px;
-    background-position-y: -22px;
-    background-position-x: -4px;
+    background-position-y: -25px;
+    background-position-x: 8px;
+}
+
+#logo p{
+    color: #333;
+    font-size: 18px;
+    font-style: oblique;
+    line-height: 102px;
+    margin-left: 5px;
 }
 
 #logo{
-    border-radius: 18px;
+    border-radius: 17px;
     border: 1px solid#333;
 }
 
@@ -136,27 +144,72 @@ option .select{
 
 #navbar ul li {
     margin: 10px auto;
-    line-height: 59px;
+    line-height: 46px;
     float: left;
 }
 
+/*#navbar ul li {
+    margin: 0px 98px 0px 2px;
+}*/
+
+
 #navbar ul li {
-    margin: 0px 215px 0px 138px;
+    display: block;
+    height: 40px;
+}
+
+/*#navbar ul li a{
+    display: block;
+}*/
+
+#navbar ul li a{
+    display: block;
+    width: 138px;
 }
 
 #header{
     border: 2px solid #333;
 }
 
-/*-------------Margenes del wrap de la Barra de navegación-------------*/
+
+/*-------------Margenes del efecto de los li de la barra de navegación-------------*/
+.contenedoreecto{
+    display: block;
+    width: 150px;
+    height: 66px;
+    float: left;
+    margin: 0px 76px 0px 143px;
+    line-height: 1px;
+    transition: 300ms;
+    overflow: hidden;
+   /* border: 1px solid black;*/
+}
+
+/*EFECTO DE LOS li*/
+
+/*.contenedoreecto li:hover{
+    background: black;
+}*/
+
+.subrraefecto{
+    width: 150px;
+    height: 3px;
+    background: black;
+    float: right;
+    margin-top: -12px;
+    /*margin-left: 10px;*/
+    /*margin: 40px 5px 0px 5px;*/
+}
+
+
 #wrap{
-    width: 1500px;
+    width: 1224px;
     margin: 0px auto;
 }
 
 /*-------------Margenes del filtro y su botón-------------*/
 #text{
-    width: 140px;
+    width: 148px;
    height: 33px;
    border-radius: 15px;
    border-color: #333;
@@ -175,13 +228,13 @@ input[type="text"] #btn{
 
 #logo{
     display: block;
-    margin-top: 8px;
-    width: 90px;
-    height: 50px;
+    margin-top: 2px;
+    width: 115px;
+    height: 60px;
     transform: 700ms;
 }
 
-#logo:hover{
+/*#logo:hover{
     width: 93px;
     height: 53px;
     margin-top: 6px;
@@ -189,12 +242,14 @@ input[type="text"] #btn{
     background-position-y: -20px;
     background-position-x: -2px;
     box-shadow: 1px 1px 1px 1px #333;
-}
+}*/
 
-#navbar ul li a:hover{
-        font-size: 20px;
+/*||||||||||||||||||||||| ESTILO DE SUBRRAYADO PENDIENTE |||||||||||||||||||||||*/
+
+/*#navbar ul li a:hover{
+        font-size: 19px;
         text-shadow: 1px 1px 1px 2px black;
-}
+}*/
 
 
 
@@ -206,6 +261,11 @@ input[type="text"] #btn{
     padding-left: 4%;
 }
 
+#navbar ul li a{
+    font-size: 18px;
+}
+
+
 select{
     margin: 20px;
 }
@@ -214,10 +274,14 @@ select{
  width: 60px;
  height: 40px;
  font-size: 15px;
+ /*border: none;*/
  border-radius: 10px;
- border-color: #333;
- background: white;
+ color: white;
+ background: #333;
  transition: 300ms;
+ border-style: none;
+ /*border-color: #333;*/
+ letter-spacing: 1px;
 }
 
 #mts{
@@ -234,21 +298,26 @@ select{
     border-radius: 15px;
     background-color: #333;
     transition: 300ms;
-    margin-left: 30px;
+    margin-left: 23px;
 }
 
 #mts:hover{
     font-size: 16px;
     width: 180px;
     height: 60px;
+    background-color: white;
+    color: #333;
+    border: 2px solid #333;
+    font-style: inherit;
 }
 
 #btn:hover{
-    color: white;
-    background: #333;
+    color: #333;
+    background: white;
     width: 60px;
     height: 35px;
-    box-shadow: 1px 1px 1px 1px black;
+    border: 2px solid #333;
+    /*box-shadow: 1px 2px 2px 4px black;*/
 }
 
 /* Pie De Pagina*/
@@ -344,6 +413,12 @@ footer{
     padding: 20px;
  }
  
+ .footerr .informacion a{
+     font-style: none;
+     text-decoration: none;
+     color: white;
+ }
+
  .CopyRight{
     color: #c7c7c7;   
  }

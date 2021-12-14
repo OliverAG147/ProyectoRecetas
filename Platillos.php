@@ -83,15 +83,32 @@
                 <!--Margen de la barra de navegación-->
                 <div id="wrap">
                     <div id="logo">
-                        <a href="home.php"></a>
+                        <p>Super Recetas</p>
                     </div>
                     <!--Barra de navegación-->
                     <nav id="navbar">
                         <!--Elementos de la barra de navegación-->
                         <ul>
-                            <li><a href="home.php">Home</a></li>
+
+                            <div id= "divOli1" class="contenedoreecto">
+                            
+                            <li><a href="home.php">Home</a>
+                            </li>
+                                <div class="subrraefecto"></div>
+                            </div>
+
+                            <div class="contenedoreecto">
+                            
                             <li><a href="crear_receta.php">Crear Receta</a></li>
+                                <div class="subrraefecto"></div>
+                            </div>
+
+                            <div  class="contenedoreecto" style = "float: right; margin-right: 0px;">
+                          
                             <li><a href="logout.php">Cerrar sesión</a></li>
+                                <div class="subrraefecto"></div>
+                            </div>
+
                         </ul>
                         <!--Fin de los Elementos de la barra de navegación-->
                     </nav>
@@ -140,7 +157,7 @@
                                     <input id= "inputOli1" name = "categoria" type="" value ="<?php echo $row["categoria"]; ?>">
                                     <input id= "inputOli1" name = "pais" type="" value ="<?php echo $row["pais"]; ?>">
 
-                                    <button type = "submit" class = "btnOli1"> ver receta</button>
+                                    <button type = "submit" class = "btnOli1"> Ver receta</button>
                                 </form>
                                 
                             <?php } ?>
@@ -198,7 +215,7 @@
                         <a href="">Super Recetas</a>
                     </div>
                     <div class="informacion">
-                        <a href=""> informacion Compañia</a> | 
+                        <a href=""> Informacion Compañia</a> | 
                         <a href=""> Privacion y Politica</a> |
                         <a href=""> Terminos y Condiciones</a>
                     </div>
