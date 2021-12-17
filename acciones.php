@@ -1,70 +1,5 @@
 <?php
-    include ("bd.php");
-    /*print '<pre>';
-    print_r($_POST);*/
-
-    $queryPre = "SELECT * FROM receta WHERE";
-
-    if(isset($_POST["contBuscar"])){
-        $Cbuscar= $_POST["contBuscar"];
-        $queryLast = " name_receta LIKE '%$Cbuscar%'";
-    }else{
-        $queryLast = " name_receta LIKE '%%'";
-    }
-    $queryAND2 = "";
-
-
-    if(isset($_POST["contPais"])){
-        $Cpais= $_POST["contPais"];
-    }else{
-        $Cpais= 0;
-    }
-    switch ($Cpais){
-        case 1:
-            $QRC1 = " pais = 1";
-            $queryAND = " AND";
-            $queryAND2 = " AND";
-            break;
-        case 2:
-            $QRC1 = " pais = 2";
-            $queryAND = " AND";
-            $queryAND2 = " AND";
-            break;
-        case 3:
-            $QRC1 = " pais = 3";
-            $queryAND = " AND";
-            $queryAND2 = " AND";
-            break;
-        default:
-            $QRC1 = "";
-            $queryAND = "";
-            
-    }
-
-    if(isset($_POST["contCategoria"])){
-        $Ccategoria = $_POST["contCategoria"];
-    }else{
-        $Ccategoria = 0;
-    }
-    switch ($Ccategoria){
-        case 1:
-            $QRC2 = " categoria = 1";
-            $queryAND2 = " AND";
-            break;
-        case 2:
-            $QRC2 = " categoria = 2";
-            $queryAND2 = " AND";
-            break;
-        case 3:
-            $QRC2 = " categoria = 3";
-            $queryAND2 = " AND";
-            break;
-        default:
-            $QRC2 = "";
-            $queryAND = ""; 
-    }
-
-    $queryRecetas = $queryPre.$QRC1.$queryAND.$QRC2.$queryAND2.$queryLast;
+   
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,19 +10,32 @@
     <title>Document</title>
 </head>
 <body>
-    <H1>
-        <?php 
-            $query = "SELECT * FROM receta";
-            $res = mysqli_query($conexion, $query);
-            while ($row = mysqli_fetch_assoc($res)){?>
-                <tr>
-                    <td> 
-                        <?php echo $row["img_receta"] ?>
-                        <img  src="data:image/png;base64,<?php echo base64_encode( $res['img_receta'] ); ?> " >
-                    </td>
-                </tr>
-        <?php } 
-        ?>
-    </H1>
+<?php
+        //Credenciales de conexion
+        $Host = 'localhost';
+        $Username = 'root';
+        $Password = '';
+        $dbName = 'apprecetas';
+        
+        //Crear conexion mysql
+        $db = new mysqli($Host, $Username, $Password, $dbName);
+        
+        //revisar conexion
+        if($db->connect_error){
+        die("Connection failed: " . $db->connect_error);
+        }
+        
+        //Extraer imagen de la BD mediante GET
+        $result = $db->query("SELECT img_receta FROM receta WHERE id_receta = 8");
+        
+        if($result->num_rows > 0){
+            $imgDatos = $result->fetch_assoc();
+            
+            echo '<img style = "width:200px;" src="data:image/jpeg;base64,'.base64_encode( $imgDatos['img_receta'] ).'"/>';
+        }else{
+            echo 'Imagen no existe...';
+        }
+    
+?>
 </body>
 </html>

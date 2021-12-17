@@ -139,6 +139,7 @@
                     </div>
                 </form>
                 <section id = "sectionOli1">
+                    <scroll-container>
                     <div>
                         <?php
                             $resultado = mysqli_query($conexion, $queryRecetas);
@@ -162,6 +163,7 @@
                                 
                             <?php } ?>
                     </div>
+                    </scroll-container>
                  </section>
             </aside>
         </div>

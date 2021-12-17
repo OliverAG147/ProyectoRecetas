@@ -1,44 +1,11 @@
 <?php
     include ("bd.php");
-    $query=mysqli_query($conexion,"SELECT id_categoria,name_categoria FROM categoria");
-    $query2=mysqli_query($conexion,"SELECT id_pais,name_pais FROM pais");
-?>
-<?php 
-    include "bd.php";
-    error_reporting(0);
-    session_start();
-    if(isset($_POST['btncrear'])){
-        $img_receta=$_POST["img_receta"];
-        $categoria=$_POST["categoria"];
-        $pais=$_POST["pais"];
-        $name_receta=$_POST["name_receta"];
-        $ingrediente_receta=$_POST["ingrediente_receta"];
-        $procedimiento_receta=$_POST["procedimiento_receta"];
 
-        $consulta="INSERT INTO receta (name_receta,ingrediente_receta,procedimiento_receta,img_receta,categoria,pais) 
-        VALUE ('$name_receta', '$ingrediente_receta', '$procedimiento_receta','$img_receta', '$categoria', '$pais')";
-        $resultado=mysqli_query($conexion,$consulta);
-
-        if($resultado){
-            echo "<script language='JavaScript'>alert('La receta se ha creado con éxito')</script>";
-            $img_receta="";
-            $categoria="";
-            $pais="";
-            $name_receta="";
-            $ingrediente_receta="";
-            $procedimiento_receta="";
-        }else{
-            echo "<script language='JavaScript'>alert('Hay un error')</script>";
-        }
-        mysqli_close($conexion);
-    }
-?>
-<?php
-    
+    $id = $_POST["id"];
     $nombre = $_POST["nombre"];
-    $imagen = $_POST["imagen"];
     $ingredientes = $_POST["ingredientes"];
     $procedimiento = $_POST["procedimiento"];
+
     switch ($_POST["categoria"]){
         case 1:
             $categoria = "Comida";
@@ -59,6 +26,7 @@
         case 3:
             $pais = "Estados Unidos";
     }
+
 ?>
 
 <!DOCTYPE html>
@@ -131,7 +99,16 @@
                             </div>
                             <div class="col-lg-4">
                                 <label class="form-label semibold">imagen</label>
-                                <img src="" alt="">
+                                <?php
+                                    $queryImg = mysqli_query($conexion,"SELECT img_receta FROM receta WHERE id_receta = $id");
+                                    if($queryImg->num_rows > 0){
+                                        $imgDatos = $queryImg->fetch_assoc();
+                                        
+                                        echo '<img style = "width:200px; height: auto;" src="data:image/jpeg;base64,'.base64_encode( $imgDatos['img_receta'] ).'"/>';
+                                    }else{
+                                        echo 'Imagen no existe...';
+                                    }
+                                ?>
                             </div>
                             <div class="col-lg-4">
                                 <label  class="form-label semibold">Ingredientes</label>
