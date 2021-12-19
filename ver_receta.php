@@ -1,3 +1,12 @@
+<?php 
+  require_once("bd.php");
+  session_start();
+  if (isset($_SESSION["usuario"])){
+
+?>
+
+
+
 <?php
     include ("bd.php");
 
@@ -187,3 +196,21 @@
         </footer>
     </body>
 </html>
+
+
+<?php
+  } else{
+	  echo'<SCRIPT LANGUAGE="javascript">
+      location.href = "index.php";
+      </SCRIPT>';
+  }
+?>
+
+
+
+
+
+
+
+
+

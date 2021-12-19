@@ -1,3 +1,9 @@
+<?php 
+  require_once("bd.php");
+  session_start();
+  if (isset($_SESSION["usuario"])){
+
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -117,3 +123,10 @@
                        </footer>
     </body>
 </html>
+<?php
+  } else{
+	  echo'<SCRIPT LANGUAGE="javascript">
+      location.href = "index.php";
+      </SCRIPT>';
+  }
+?>

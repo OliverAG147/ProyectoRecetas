@@ -1,3 +1,9 @@
+<?php 
+  require_once("bd.php");
+  session_start();
+  if (isset($_SESSION["usuario"])){
+
+?>
 <?php
     include ("bd.php");
     $query=mysqli_query($conexion,"SELECT id_categoria,name_categoria FROM categoria");
@@ -195,4 +201,17 @@
         </footer>
     </body>
 </html>
+
+
+<?php
+  } else{
+	  echo'<SCRIPT LANGUAGE="javascript">
+      location.href = "index.php";
+      </SCRIPT>';
+  }
+?>
+
+
+
+
 
